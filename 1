@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func main() {
+	 
+	http.HandleFunc("/", list)
+	//http.HandleFunc("/done", done)
+	//http.HandleFunc("/add", add)
+
+	http.ListenAndServe(":8800", nil)
+}
+
+type Task struct {
+	Description string
+	Done bool
+}
+var task []Task
+
+
+
+
+}
+func done(){
+
+
+}
+func add(){
+
+}
