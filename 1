@@ -8,8 +8,8 @@ import (
 func main() {
 	 
 	http.HandleFunc("/", list)
-	//http.HandleFunc("/done", done)
-	//http.HandleFunc("/add", add)
+	http.HandleFunc("/done", done)
+	http.HandleFunc("/add", add)
 
 	http.ListenAndServe(":8800", nil)
 }
