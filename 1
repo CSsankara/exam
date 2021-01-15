@@ -1,17 +1,9 @@
 import (
 	"fmt"
-	"net/http"
+	
 )
 
 func main() {
-	
-	 
-	http.HandleFunc("/", list)
-	http.HandleFunc("/done", done)
-	http.HandleFunc("/add", add)
-
-	http.ListenAndServe(":8800", nil)
-}
 
 type Task struct {
 	Description string
@@ -20,21 +12,3 @@ type Task struct {
 var task []Task
 
 
-func list(rw http.ResponseWriter, _ *http.Request){
-	for i,val := range task{
-		if val.Done == false {
-			chaine := fmt.Sprintf("ID: %d, task:%s",i , val.Description)
-			bt := []byte (chaine)
-			rw.WriteHeader(http.StatusOK)
-			rw.Write(bt)
-		}
-	}
-
-}
-func done(){
-
-
-}
-func add(){
-
-}
